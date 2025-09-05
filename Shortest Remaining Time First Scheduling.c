@@ -9,20 +9,6 @@ struct process{
 	int rt;
 	int flag;
 };
-/*struct process queue[n];
-int* swap(int arr[],int i,int j){
-int temp;
-temp=arr[i].arrival;
-arr[i].arrival=arr[j].arrival;
-arr[i].arrival=temp;
-temp=arr[i].id;
-arr[i].id=arr[j].id;
-arr[i].id=temp;
-temp=arr[i].burst;
-arr[i].burst=arr[j].burst;
-arr[i].burst=temp;
-return arr;
-}*/
 int main(){
 int n,i,j,q,time=0,temp,sum_wt=0,sum_tat=0,k,min,pid,count=0;
 float avg_wt,avg_tat;
@@ -63,7 +49,6 @@ for(i=0;i<n;i++){
 			temp=t[i];
 			t[i]=t[j];
 			t[j]=temp;
-			//swap(queue,i,j);
 		}
 		else if(queue[i].arrival==queue[j].arrival){
 			if(queue[i].burst>queue[j].burst){
@@ -79,13 +64,11 @@ for(i=0;i<n;i++){
 			temp=t[i];
 			t[i]=t[j];
 			t[j]=temp;
-			//swap(queue,i,j);
 			}
 		}
 	}
 }
 	printf("%d",time);
-//for(i=0;i<n;i++){
 	if(time<queue[0].arrival){
 		time=queue[0].arrival;
 	}
@@ -111,15 +94,10 @@ k=0;
 	printf("pid:%d\n",pid);
 	printf("queue id:%d\n",queue[pid].burst);
 	printf("time before add:%d\n",time);
-	//time+=queue[pid].burst;
 	printf("%d\n",time);
-	/*if(time<queue[i].arrival){
-		time+=(queue[i].arrival-time);
-	}*/
 	if(cpu_t[pid]==-1)
 	    cpu_t[pid]=time;
 	if(queue[pid].burst>=q){
-	//queue[pid].flag=1;
 	time+=q;
 	queue[pid].burst-=q;
 	if(queue[pid].burst==0){
@@ -152,7 +130,6 @@ k=0;
                                     }
 }
 	avg_wt=(float)sum_wt/n;
-	//printf("%d",sum_wt);
 avg_tat=(float)sum_tat/n;
 
 printf("\nProcess id\t\tArrival time\t\tBurst time\t\tCompletion time\t\tTurnaround time\t\tWaiting time\t\tResponse time");
@@ -164,3 +141,4 @@ printf("\n");
 printf("\nAvg waiting time:%f",avg_wt);
 printf("\nAvg turnaround time:%f",avg_tat);
 }
+
