@@ -32,3 +32,25 @@ These algorithms simulate process scheduling in Operating Systems and calculate 
    ./fcfs
 
 (replace fcfs.c with the file you want to run)
+
+## ⏱️ Time & Space Complexities
+
+### 1. FCFS (First Come First Serve)
+- **Time Complexity:** O(n²) (due to sorting by arrival time)  
+- **Space Complexity:** O(n)  
+
+### 2. SJF (Non-Preemptive)
+- **Time Complexity:** O(n²) (sorting + selection)  
+- **Space Complexity:** O(n)  
+
+### 3. SRTF (Preemptive)
+- **Time Complexity:** O(total_burst * n) in worst case (since selection happens at each unit)  
+- **Space Complexity:** O(n)  
+
+### 4. Priority Scheduling
+- **Time Complexity:** O(n²) (sorting + selection)  
+- **Space Complexity:** O(n)  
+
+### 5. Round Robin
+- **Time Complexity:** O(total_burst) (each burst unit executed once)  
+- **Space Complexity:** O(n)  
