@@ -50,7 +50,6 @@ for(i=0;i<n;i++){
                 }
         }
 }
-//i=0;
 if(time<queue[0].arr)
         time=queue[0].arr;
 for(i=0;i<n;i++){
@@ -65,7 +64,6 @@ for(i=0;i<n;i++){
 	}
 }
 while(count<n){
-
 tp=r_queue[front];
 if(cpu_t[tp]==-1)
     cpu_t[tp]=time;
@@ -127,55 +125,7 @@ else if(queue[tp].burst>0&&queue[tp].burst<q){
                   queue[tp].rt=cpu_t[tp]-queue[tp].arr;
                                 ++count;
 }
-/*else{
-	++rear;
-r_queue[rear]=tp;
-queue[tp].flag=1;
-}*/
 }
-/*while(count<n){
-if(time<queue[i].arr){
-        time=queue[i].arr;
-        ++rear;
-        front=0;
-        r_queue[rear]=i;
-}
-if(queue[i].burst>=q){
-time+=q;
-printf("\n%d %d",queue[i].id,time);
-queue[i].burst-=q;
-for(j=0;j<n;j++){
-	if(time>=queue[j].burst&&j!=i&&queue[j].flag==0){
-		++rear;
-		if(front==-1)
-		    front=0;
-		r_queue[rear]=j;
-		queue[j].flag=1;
-	}
-}
-
-if(queue[i].burst==0){
-                queue[i].comp=time;
-                        queue[i].tat=queue[i].comp-queue[i].arr;
-                                queue[i].wt=queue[i].tat-temp[i];
-                                queue[i].flag=1;
-                                        ++count;
-}
-}else if(queue[i].burst>0&&queue[i].burst<q){
-        time+=queue[i].burst;
-        printf("\n%d %d",queue[i].id,time);
-        queue[i].burst=0;
-        queue[i].comp=time;
-                queue[i].tat=queue[i].comp-queue[i].arr;
-                  queue[i].wt=queue[i].tat-temp[i];
-                                ++count;
-}else{
-	++rear;
-r_queue[rear]=i;
-queue[i].flag=1;
-}
-i=(i+1)%n;
-}*/
 avg_tat=(float)sum_tat/n;
 avg_wt=(float)sum_wt/n;
 printf("\nProcess ID\t\t\tArrival time\t\t\tBurst time\t\t\tCompletion time\t\t\tTurnaround time\t\t\tWaiting time\t\t\tResponse time");
@@ -185,4 +135,5 @@ printf("\n%d\t\t%d\t\t%d\t\t%d\t\t%d\t\t%d\t\t%d",queue[i].id,queue[i].arr,temp[
 printf("\nAvg turnaround time: %f",avg_tat);
 printf("\nAvg waiting time: %f",avg_wt);
 }
+
 
