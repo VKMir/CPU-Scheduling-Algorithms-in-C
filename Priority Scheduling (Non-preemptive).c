@@ -63,8 +63,7 @@ int main(){
          queue[j].burst=temp;
          temp=queue[i].priority;
          queue[i].priority=queue[j].priority;
-         queue[j].priority=temp;
-                                           
+         queue[j].priority=temp;                    
          }
       }
    }
@@ -172,4 +171,5 @@ printf("%d\t\t\t%d\t\t\t%d\t\t\t%d\t\t\t%d\t\t\t%d\t\t\t\t%d\t\t\t%d",queue[i].i
 printf("\nAvg turnaround time: %f",avg_tat);
 printf("\nAvg waiting time: %f",avg_wt);
 }
+
 
